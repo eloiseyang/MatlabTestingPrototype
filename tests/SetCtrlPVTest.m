@@ -32,8 +32,9 @@ classdef SetCtrlPVTest < matlab.mock.TestCase & matlab.uitest.TestCase
 
     methods (Test)
         function retrieveInitialValueTest(tc)
-            tc.type(tc.app.FieldCtrlPVName, "TEST:ADDRESS")
-            % callback onUICtrlPVSet
+            % tc.type(tc.app.FieldCtrlPVName, "TEST:ADDRESS")
+            tc.app.FieldCtrlPVName.Value = "TEST:ADDRESS";
+            tc.app.FieldCtrlPVName.ValueChangedFcn(tc.app,{});
             tc.verifyEqual(tc.app.FieldCtrlPVInitialValue.Value, '1')
         end
     end
