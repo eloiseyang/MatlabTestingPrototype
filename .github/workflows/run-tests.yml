@@ -1,6 +1,6 @@
 name: run-tests
 on: [push, pull_request]
-run-name: Running Matlab tests on: ${{ github.ref }}
+run-name: Running Matlab tests on ${{ github.ref_name }}
 jobs:
   my-job:
     name: Run MATLAB Tests and Generate Artifacts
